@@ -13,6 +13,8 @@ class Seagull (Context, event.Event):
         self.verbs['chase'] = self
         self.verbs['feed'] = self
         self.verbs['help'] = self
+        self.verbs['kill'] = self
+        self.verbs['pet'] = self
         self.result = {}
         self.go = False
 
@@ -41,6 +43,16 @@ class Seagull (Context, event.Event):
         elif (verb == "help"):
             print ("the seagulls will pester you until you feed them or chase them off")
             self.go = False
+        elif (verb == "kill"):
+            self.go = True
+            print ("You have murdered a seagull")
+        elif (verb == "pet"):
+            self.go = True
+            x = random.randint(1,10)
+            if (x<5):
+                print('the seagulls enjoy it')
+            else:
+                print('the seagulls flew away')        
         else:
             print ("it seems the only options here are to feed or chase")
             self.go = False
