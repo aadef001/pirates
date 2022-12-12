@@ -37,4 +37,10 @@ class Flintlock(Item):
         self.skill = "guns"
         self.verb = "shoot"
         self.verb2 = "shoots"
-
+class AlkemSword(Item):
+    def __init__(self):
+        super().__init__("Sword", 0)
+        self.damage = (10,100)
+        self.skill = "swords"
+        self.verb = "stab"
+        self.verb2 = "stabs"
